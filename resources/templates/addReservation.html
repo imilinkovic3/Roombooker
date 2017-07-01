@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+    <h1>Welcome to Roombooker</h1>
+</div>
+
+
+
+<div class="row">
+    <div class="span12">
+        <form method="POST" action="/reservation">
+            <div class="form-group add_new_reservation_form">
+                {% csrf-field %}
+                Meeting name:
+                <input class="form-control"
+                       type="text"
+                       name="meetingName"/>
+                Employee:
+                <input class="form-control"
+                       type="text"
+                       name="employeeName"
+                       value="" />
+                Room name:
+                <input class="form-control"
+                       type="text"
+                       name="roomName"/>
+                Start:
+                <input class="form-control"
+                       type="date"
+                       name="start"/>
+                End:
+                <input class="form-control"
+                       type="date"
+                       name="end"/>
+
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="Save" />
+        </form>
+    </div>
+</div>
+
+{% endblock %}

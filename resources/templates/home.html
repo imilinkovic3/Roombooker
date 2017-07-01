@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="jumbotron">
+    <h1>Welcome to Roombooker</h1>
+  </div>
+
+
+
+      <div class="container">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Employee</th>
+            <th>Room</th>
+            <th>Meeting</th>
+            <th>Start</th>
+            <th>End</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for item in reservations %}
+            <tr>
+              <th>{{item.employeename}}</th>
+              <th>{{item.roomname}}</th>
+              <th>{{item.meetingname}}</th>
+              <th>{{item.start}}</th>
+              <th>{{item.end}}</th>
+            </tr>
+          {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+
+{% endblock %}
